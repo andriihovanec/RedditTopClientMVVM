@@ -1,0 +1,3 @@
+package com.andriikhovanets.reddittopclient.ui
+
+class RedditListAdapter
