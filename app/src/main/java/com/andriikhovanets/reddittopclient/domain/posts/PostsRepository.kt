@@ -4,5 +4,5 @@ import com.andriikhovanets.reddittopclient.domain.Either
 import com.andriikhovanets.reddittopclient.domain.Failure
 
 interface PostsRepository {
-    fun getPosts(needFetch: Boolean): Either<Failure, List<PostEntity>>
+    fun getPosts(limit: Int, after: String?, needFetch: Boolean): Either<Failure, List<PostEntity>>
 }
