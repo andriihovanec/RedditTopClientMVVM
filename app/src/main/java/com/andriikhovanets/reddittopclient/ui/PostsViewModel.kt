@@ -2,6 +2,6 @@ package com.andriikhovanets.reddittopclient.ui
 
 import androidx.lifecycle.ViewModel
 
-class RedditListViewModel : ViewModel() {
+class PostsViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

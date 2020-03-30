@@ -5,13 +5,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.andriikhovanets.reddittopclient.R
 
-class RedditListFragment : Fragment(R.layout.fragment_reddit_list) {
+class PostsFragment : Fragment(R.layout.fragment_reddit_list) {
 
-    private lateinit var viewModel: RedditListViewModel
+    private lateinit var viewModel: PostsViewModel
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RedditListViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(PostsViewModel::class.java)
     }
 
 }
