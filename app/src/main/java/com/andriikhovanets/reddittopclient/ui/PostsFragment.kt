@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.andriikhovanets.reddittopclient.R
+import com.andriikhovanets.reddittopclient.presentation.PostsViewModel
 
 class PostsFragment : Fragment(R.layout.fragment_reddit_list) {
 

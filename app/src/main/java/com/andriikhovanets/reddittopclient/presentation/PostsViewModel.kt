@@ -1,4 +1,4 @@
-package com.andriikhovanets.reddittopclient.ui
+package com.andriikhovanets.reddittopclient.presentation
 
 import androidx.lifecycle.ViewModel
 
