@@ -19,7 +19,7 @@ class PostsRepositoryImpl(
 
         return if (needFetch) {
             postsRemote.getPosts(limit, after).onNext {
-                postsCache.savePosts(it)
+                postsCache.insertPosts(it)
             }
         } else {
             Either.Right(postsCache.getPosts())

@@ -1,6 +1,7 @@
 package com.andriikhovanets.reddittopclient.presentation.injection
 
-import com.andriikhovanets.reddittopclient.cache.PostsDatabase
+import android.content.Context
+import com.andriikhovanets.reddittopclient.cache.RedditDatabase
 import com.andriikhovanets.reddittopclient.data.PostsCache
 import dagger.Module
 import dagger.Provides
@@ -11,7 +12,13 @@ class CacheModule {
 
     @Provides
     @Singleton
-    fun providePostsCache(postsDatabase: PostsDatabase): PostsCache {
-        return postsDatabase.postsDao
+    fun provideRedditDatabase(context: Context): RedditDatabase {
+        return RedditDatabase.getInstance(context)
+    }
+
+    @Singleton
+    @Provides
+    fun providePostsCache(redditDatabase: RedditDatabase): PostsCache {
+        return redditDatabase.postsDao
     }
 }

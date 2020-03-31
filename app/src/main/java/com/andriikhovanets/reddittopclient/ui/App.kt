@@ -4,6 +4,7 @@ import android.app.Application
 import com.andriikhovanets.reddittopclient.presentation.injection.AppModule
 import com.andriikhovanets.reddittopclient.presentation.injection.CacheModule
 import com.andriikhovanets.reddittopclient.presentation.injection.RemoteModule
+import com.andriikhovanets.reddittopclient.presentation.injection.ViewModelModule
 import com.andriikhovanets.reddittopclient.ui.posts.PostsFragment
 import dagger.Component
 import javax.inject.Singleton
@@ -27,7 +28,7 @@ class App : Application() {
 }
 
 @Singleton
-@Component(modules = [AppModule::class, CacheModule::class, RemoteModule::class])
+@Component(modules = [AppModule::class, CacheModule::class, RemoteModule::class, ViewModelModule::class])
 interface AppComponent {
 
     fun inject(activity: MainActivity)
