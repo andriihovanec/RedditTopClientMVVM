@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/redditListFragment"
-        android:name="com.andriikhovanets.reddittopclient.ui.PostsFragment"
+        android:name="com.andriikhovanets.reddittopclient.ui.posts.PostsFragment"
         android:label="fragment_reddit_list"
         tools:layout="@layout/fragment_reddit_list" />
 </navigation>

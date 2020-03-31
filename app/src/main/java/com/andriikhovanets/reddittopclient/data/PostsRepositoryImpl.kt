@@ -7,8 +7,8 @@ import com.andriikhovanets.reddittopclient.domain.posts.PostEntity
 import com.andriikhovanets.reddittopclient.domain.posts.PostsRepository
 
 class PostsRepositoryImpl(
-    private val postsCache: PostsCache,
-    private val postsRemote: PostsRemote
+    private val postsRemote: PostsRemote,
+    private val postsCache: PostsCache
 ) : PostsRepository {
 
     override fun getPosts(

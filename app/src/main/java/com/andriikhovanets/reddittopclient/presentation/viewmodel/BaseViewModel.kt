@@ -1,4 +1,4 @@
-package com.andriikhovanets.reddittopclient.presentation
+package com.andriikhovanets.reddittopclient.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

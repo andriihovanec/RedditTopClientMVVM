@@ -1,4 +1,9 @@
 package com.andriikhovanets.reddittopclient.cache
 
-abstract class PostsDatabase {
+import androidx.room.RoomDatabase
+import com.andriikhovanets.reddittopclient.cache.posts.PostsDao
+
+abstract class PostsDatabase : RoomDatabase() {
+
+    abstract val postsDao: PostsDao
 }

@@ -4,8 +4,11 @@ import com.andriikhovanets.reddittopclient.domain.Either
 import com.andriikhovanets.reddittopclient.domain.Failure
 import retrofit2.Call
 import retrofit2.Response
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class Request(private val network: NetworkHandler) {
+@Singleton
+class Request @Inject constructor(private val network: NetworkHandler) {
 
     fun <T : BaseResponse, R> make(call: Call<T>, transform: (T) -> R): Either<Failure, R> {
         return when(network.isConnected) {

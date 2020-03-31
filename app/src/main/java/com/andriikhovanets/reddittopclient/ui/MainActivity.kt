@@ -1,7 +1,8 @@
-package com.andriikhovanets.reddittopclient
+package com.andriikhovanets.reddittopclient.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.andriikhovanets.reddittopclient.R
 
 class MainActivity : AppCompatActivity() {
 
