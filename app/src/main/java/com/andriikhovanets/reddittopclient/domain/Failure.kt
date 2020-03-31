@@ -6,4 +6,5 @@ package com.andriikhovanets.reddittopclient.domain
 sealed class Failure {
     object NetworkConnectionError : Failure()
     object ServerError : Failure()
+    object SpecificServerError : Failure()
 }
