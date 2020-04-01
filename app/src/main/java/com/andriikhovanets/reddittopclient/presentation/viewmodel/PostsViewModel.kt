@@ -7,7 +7,8 @@ import javax.inject.Inject
 
 class PostsViewModel @Inject constructor(val getPostsUseCase: GetPosts) : BaseViewModel() {
 
-    val postsData = MutableLiveData<List<PostEntity>>()
+    private val _postsData = MutableLiveData<List<PostEntity>>()
+    val postData = _postsData
 
     fun getPosts() {
         getPostsUseCase(GetPosts.Params(10, "", true)) {
@@ -19,7 +20,7 @@ class PostsViewModel @Inject constructor(val getPostsUseCase: GetPosts) : BaseVi
     }
 
     private fun handlePostsReceived(posts: List<PostEntity>) {
-        postsData.value = posts
+        _postsData.value = posts
     }
 
     override fun onCleared() {

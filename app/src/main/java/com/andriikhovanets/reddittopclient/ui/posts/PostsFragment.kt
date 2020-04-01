@@ -1,7 +1,9 @@
 package com.andriikhovanets.reddittopclient.ui.posts
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.andriikhovanets.reddittopclient.R
 import com.andriikhovanets.reddittopclient.presentation.viewmodel.PostsViewModel
@@ -25,5 +27,9 @@ class PostsFragment : Fragment(R.layout.fragment_reddit_list) {
         //viewModel = ViewModelProvider(this).get(PostsViewModel::class.java)
 
         viewModel = ViewModelProvider(this,viewModelFactory)[PostsViewModel::class.java]
+        viewModel.getPosts()
+        viewModel.postData.observe(this, Observer {
+            Toast.makeText(context, "${it.size}", Toast.LENGTH_SHORT).show()
+        })
     }
 }

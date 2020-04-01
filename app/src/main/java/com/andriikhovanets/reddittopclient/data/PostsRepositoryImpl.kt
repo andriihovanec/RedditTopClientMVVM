@@ -18,9 +18,14 @@ class PostsRepositoryImpl(
     ): Either<Failure, List<PostEntity>> {
 
         return if (needFetch) {
-            postsRemote.getPosts(limit, after).onNext {
-                postsCache.insertPosts(it)
+            val posts = mutableListOf<PostEntity>()
+            postsRemote.getPosts(limit, after).onNext { wrapper ->
+                wrapper.data?.children?.map { list ->
+                    posts.add(list.post!!)
+                }
+                postsCache.insertPosts(posts.toList())
             }
+            Either.Right(posts.toList())
         } else {
             Either.Right(postsCache.getPosts())
         }
